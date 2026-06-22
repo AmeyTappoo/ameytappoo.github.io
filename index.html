@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Quantara - AI Investment Portfolio Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+     <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home-page" class="logo">
+                <img src="assets/logo.png" alt="Quantara" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home-page" class="nav-link active" data-page="home">home</a></li>
+                 <li><a href="#portfolio-page" class="nav-link" data-page="portfolio">Build Portfolio</a></li>
+                 <li><a href="#learn-page" class="nav-link" data-page="learn">Learn</a></li>
+                 <li><a href="#about-page" class="nav-link" data-page="about">About</a></li>
+                 <li><a href="#contact-page" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <span id="userGreeting" class="user-greeting hidden"></span>
+                <button id="loginBtn" class="btn btn-ghost">Log in</button>
+                <button id="logoutBtn" class="btn btn-ghost hidden">Log out</button>
+                <button id="signupBtn" class="btn btn-primary">Get started</button>
+            </div>
+           <div id="hamburger" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+           </div>
+        </div>
+        <ul class="nav-links-mobile" id="navLinksMobile">
+            <li><a href="#home-page" class="nav-link">Home</a></li>
+            <li><a href="#portfolio-page" class="nav-link">Build Portfolio</a></li>
+            <li><a href="#learn-page" class="nav-link">Learn</a></li>
+            <li><a href="#about-page" class="nav-link">About</a></li>
+            <li><a href="#contact-page" class="nav-link">Contact</a></li>
+        </ul>
+     </nav>
+        <section class="page active" id="home-page">
+             <section class="hero" id="home">
+                <div class="hero-bg"></div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="eyebrow">AI investment advisor for everyday Australians</span>
+                        <h1>The investing guidance you couldn't afford,<br>now free.</h1>
+                        <p>Quantara turns your goals, age and risk tolerance into a personalised investment portfolio — explained in plain English, not jargon. No advisor fees. No minimums. No confusion.</p>
+<div class="hero-actions">
+    <button class="btn btn-primary btn-lg" id="heroStartBtn">Build my portfolio</button>
+    <a href="#learn-page" class="btn btn-outline btn-lg" id="seeHowItWorksBtn">See how it works</a>
+</div>
+                     <p class="hero-disclaimer">⚠ Quantara provides AI-generated educational guidance, not licensed financial advice under the Corporations Act 2001 (Cth).</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="preview-card">
+                        <p class="preview-label">Your recommended portfolio</p>
+                        <p class="preview-sub">Medium risk · Long-term growth</p>
+                        <div class="preview-chart-wrap">
+                             <canvas id="previewChart"></canvas>
+                             </div>
+                             <div class="preview-legend">
+                                <span><i style="background:#5B8DEF"></i>ETFs 50%</span>
+                                <span><i style="background:#3DD9A8"></i>Shares 30%</span>
+                                <span><i style="background:#F2A93B"></i>Bonds 20%</span>
+
+                             </div>
+                        </div>
+                    </div>
+                </div>
+             </section>
+              <section class="stats-strip">
+                 <div class="stat-item">
+                    <p class="stat-value">$0</p>
+                    <p class="stat-label">Cost to use Quantara</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-value">1 in 8</p>
+                        <p class="stat-label">Australians stick to their financial goals*</p>
+                    </div>
+                    <div class="stat-item">
+                <p class="stat-value">~3 min</p>
+                <p class="stat-label">To get your personalised portfolio</p>
+                </div>
+                <div class="stat-item">
+                <p class="stat-value">$4,668</p>
+                <p class="stat-label">Median annual cost of human advice*</p>
+            </div>
+              </section>
+              <p class="stats-footnote">*ASIC Moneysmart, 2025</p>
+               <section class="section-block" id="how-it-works">
+                 <h2 class="section-title">How Quantara works</h2>
+                 <p class="section-sub">Three steps between you and a portfolio built around your actual goals.</p>
+                 <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <h3>Tell us about you</h3>
+                        <p>Your age, income, goals, risk tolerance and time horizon — takes about three minutes.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <h3>AI builds your portfolio</h3>
+                        <p>Quantara's expert system applies investment rules and AI reasoning to recommend an asset mix suited to you.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <h3>Understand exactly why</h3>
+                        <p>Every recommendation is explained in plain English, with educational context so you actually learn.</p>
+
+                    </div>
+                 </div>
+               </section>
+                 <section class="section-block alt" id="why">
+                    <h2 class="section-title">Why Quantara is different</h2>
+                    <div class="why-grid">
+                        <div class="why-card">
+                            <h4>Built for beginners</h4>
+                            <p>No jargon. No assumptions about what you already know. Just clear explanations.</p>
+                        </div>
+                        <div class="why-card">
+                            <h4>Actually personalised</h4>
+                            <p>Not a generic model portfolio — recommendations shift based on your specific profile.</p>
+                        </div>
+                        <div class="why-card">
+                            <h4>Transparent reasoning</h4>
+                            <p>You always know why an asset was recommended, not just what was recommended.</p>
+                        </div>
+                        <div class="why-card">
+                            <h4>Privacy-first</h4>
+                            <p>Your data is encrypted and never shared. You're in control of your information.</p>
+                        </div>
+                    </div>
+                 </section>
+        </section>
+        
+         <section class="page" id="portfolio-page">
+            <div class="page-container">
+                
+                 <div id="intakeView" class="intake-view">
+                    <h2 class="section-title">Build your portfolio</h2>
+                    <p class="section-sub">Answer a few questions so Quantara can personalise your recommendation.</p>
+                    <form id="portfolioForm" class="intake-form">
+                        <div class="form-row">
+                            <label for="fullName">Full name</label>
+                            <input type="text" id="fullName" required placeholder="Jordan Smith">
+                        </div>
+                        <div class="form-row">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" min="18" max="100" required placeholder="24">
+                        </div>
+                        <div class="form-row">
+                            <label for="goal">Investment goal</label>
+                            <select id="goal" required>
+                                <option value="" disabled selected>Select a goal</option>
+                                <option value="Wealth growth">Wealth growth</option>
+                                <option value="Retirement planning">Retirement planning</option>
+                                <option value="Saving for a property">Saving for a property</option>
+                                <option value="Emergency fund">Emergency fund</option>
+                                <option value="Passive income">Passive income</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="horizon">Investment time horizon</label>
+                            <select id="horizon" required>
+                                <option value="" disabled selected>Select a time horizon</option>
+                                <option value="Short-term (0–2 years)">Short-term (0–2 years)</option>
+                                <option value="Medium-term (3–5 years)">Medium-term (3–5 years)</option>
+                                <option value="Long-term (6+ years)">Long-term (6+ years)</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="risk">Risk tolerance: <span id="riskValue">3</span> / 5</label>
+                            <input type="range" id="risk" min="1" max="5" value="3" step="1">
+                            <div class="range-labels"><span>Low risk</span><span>High risk</span></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="generateBtn">
+                            <span id="generateBtnText">Generate my portfolio</span>
+                        </button>
+                    </form>
+                 </div>
+                 
+                  <div id="loadingView" class="loading-view hidden">
+                    <div class="spinner"></div>
+                    <p>Quantara is analysing your profile…</p>
+                  </div>
+                 
+                   <div id="resultsView" class="results-view hidden">
+                    <button class="btn btn-ghost btn-sm" id="backToFormBtn">← Edit my profile</button>
+                    <div class="results-header">
+                        <h2 class="section-title">Your portfolio, <span id="resultUserName"></span></h2>
+                         <p class="section-sub" id="resultSummary"></p>
+                    </div>
+                    <div class="results-grid">
+                        <div class="result-card chart-card">
+                            <p class="card-label">Asset allocation</p>
+                            <div class="chart-wrap">
+                                <canvas id="resultsChart"></canvas>
+                            </div>
+                            <div id="allocationLegend" class="allocation-legend"></div>
+                        </div>
+                        <div class="result-card">
+                            <p class="card-label">Why this portfolio</p>
+                            <p id="explanationText" class="result-text"></p>
+                        </div>
+                        <div class="result-card">
+                            <p class="card-label">Learn about your investments</p>
+                            <div id="educationContent" class="education-content"></div>
+                        </div>
+                    </div>
+                     <div class="disclaimer-box">
+                        ⚠ <strong>Disclaimer:</strong> Quantara's recommendations are generated by AI for informational and educational purposes only. They do not constitute licensed financial advice under the Corporations Act 2001 (Cth). Please consult a licensed financial advisor before making investment decisions.
+                     </div>
+                   </div>
+            </div>
+         </section>
+        
+          <section class="page" id="learn-page">
+            <div class="page-container">
+                <h2 class="section-title">Learn the basics</h2>
+                <p class="section-sub">Bite-sized explanations of the building blocks Quantara uses in your portfolio.</p>
+                <div class="learn-grid">
+                    <div class="learn-card">
+                        <span class="learn-tag tag-blue">ETFs</span>
+                        <h4>Exchange Traded Funds</h4>
+                        <p>A basket of many shares bundled together. Instead of buying one company, you buy a small piece of hundreds — spreading your risk automatically across an entire market or sector.</p>
+                    </div>
+                    <div class="learn-card">
+                        <span class="learn-tag tag-green">Shares</span>
+                        <h4>Individual company ownership</h4>
+                        <p>Buying a share means owning a small piece of a company. Shares can offer strong growth but move up and down more than other assets, so they suit longer time horizons.</p>
+                    </div>
+                    <div class="learn-card">
+                        <span class="learn-tag tag-orange">Bonds</span>
+                        <h4>Loans that pay you interest</h4>
+                        <p>A bond is essentially a loan to a government or company, who pays you interest in return. Bonds are generally lower risk and help stabilise a portfolio during downturns.</p>
+                    </div>
+                    <div class="learn-card">
+                        <span class="learn-tag tag-purple">Risk tolerance</span>
+                        <h4>How much fluctuation you can handle</h4>
+                        <p>Risk tolerance reflects how comfortable you are with your portfolio's value moving up and down in the short term, in exchange for potentially higher long-term returns.</p>
+                    </div>
+                    <div class="learn-card">
+                        <span class="learn-tag tag-blue">Time horizon</span>
+                        <h4>When you'll need the money</h4>
+                        <p>The longer your money can stay invested, the more time it has to recover from short-term drops — which is why time horizon shapes how much risk makes sense for you.</p>
+                    </div>
+                    <div class="learn-card">
+                        <span class="learn-tag tag-green">Diversification</span>
+                        <h4>Not putting all your eggs in one basket</h4>
+                        <p>Spreading investments across asset classes reduces the impact of any single investment performing poorly, smoothing out your overall returns over time.</p>
+                    </div>
+                </div>
+            </div>
+          </section>
+         
+           <section class="page" id="about-page">
+            <div class="page-container narrow">
+                <h2 class="section-title">About Quantara</h2>
+                <p class="about-lead">Quantara exists because investment advice in Australia is broken for the people who need it most.</p>
+                <p class="about-body">Many Australians face significant barriers when attempting to access individually tailored investment advice. Traditional financial advisors charge a median of $4,668 per year — out of reach for low to middle income earners and those new to investing. Generic online resources fill some of the gap, but they're a one-size-fits-all product, not personal guidance.</p>
+                <p class="about-body">Quantara uses AI to generate a personalised portfolio recommendation based on your actual profile — age, goals, risk tolerance and time horizon — and explains every recommendation in plain English. It's built for young Australians, university students, and first-time investors who want to start, but don't know where.</p>
+                <p class="about-body"><strong>What Quantara isn't:</strong> a licensed financial advisor, a trading platform, or a tax advisory service. It's a starting point — accessible, transparent, and free.</p>
+            </div>
+           </section>
+           
+            <section class="page" id="contact-page">
+                <div class="page-container">
+                     <h2 class="section-title">Get in touch</h2>
+                     <p class="section-sub">Questions, feedback, or just want to say hello?</p>
+                     <div class="contact-grid">
+                         <form class="contact-form" id="contactForm">
+                             <div class="form-row">
+                                <label for="cName">Full name</label>
+                                <input type="text" id="cName" required>
+                             </div>
+                             <div class="form-row">
+                                <label for="cEmail">Email address</label>
+                                <input type="email" id="cEmail" required>
+                             </div>
+                             <div class="form-row">
+                                <label for="cMessage">Message</label>
+                                <textarea id="cMessage" rows="5" required placeholder="Tell us how we can help..."></textarea>
+                             </div>
+                             <button type="submit" class="btn btn-primary btn-block">Send message</button>
+                         </form>
+                         <div class="contact-info">
+                            <div class="contact-item">
+                                <h4>Email</h4>
+                                <p>hello@quantara.app</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Built for</h4>
+                                <p>Year 12 Enterprise Computing — All Saints Catholic College</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>Note</h4>
+                                <p>Quantara is a student-built educational prototype, not a commercial financial service.</p>
+
+                            </div>
+                         </div>
+                     </div>
+                </div>
+            </section>
+            
+             <div id="authModal" class="modal-overlay hidden">
+                <div class="modal">
+                    <button class="modal-close" id="modalClose">×</button>
+                    <h3 id="authModalTitle">Log in to Quantara</h3>
+                    <form id="authForm">
+                        <div class="form-row">
+                            <label for="authEmail">Email address</label>
+                            <input type="email" id="authEmail" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="authPassword">Password</label>
+                            <input type="password" id="authPassword" required minlength="6">
+                        </div>
+                        <p id="authError" class="auth-error hidden"></p>
+                        <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Log in</button>
+                    </form>
+                    <p class="auth-switch">
+                        <span id="authSwitchText">Don't have an account?</span>
+                        <a href="#" id="authSwitchLink">Sign up</a>
+
+                    </p>
+                </div>
+             </div>
+            
+              <footer>
+                <div class="footer-content">
+                    <p class="copyright">© 2026 Quantara. AI-generated educational guidance only — not licensed financial advice under the Corporations Act 2001 (Cth).</p>
+                </div>
+              </footer>
+              
+               <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+                import {
+            getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+            signOut, onAuthStateChanged
+            } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+                    import {
+            getFirestore, doc, setDoc, collection, addDoc, serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6YY1sVrEbIGCrWGWNr72U3GBe8ElLzMk",
+            authDomain: "quantara-3c650.firebaseapp.com",
+            projectId: "quantara-3c650",
+            storageBucket: "quantara-3c650.firebasestorage.app",
+            messagingSenderId: "1080705914871",
+            appId: "1:1080705914871:web:94e34784fc34443c0680f2",
+            measurementId: "G-21B9H34YGT"
+        };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        
+        window.firebaseAuth = auth;
+        window.firebaseDb = db;
+        window.firebaseFns = {
+            createUserWithEmailAndPassword, signInWithEmailAndPassword,
+            signOut, onAuthStateChanged, doc, setDoc, collection, addDoc, serverTimestamp
+        };
+        window.dispatchEvent(new Event('firebase-ready'));
+               </script>
+               <script src="script.js"></script>
+</body>
+</html>
